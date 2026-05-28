@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit a Scholarship — NaijaScholar</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-icon">🎓</div>
+        <span class="logo-text">Naija<span class="green">Scholar</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Scholarships</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="submit.html" class="nav-link nav-cta active">Submit a Scholarship</a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Scholarships</a>
+      <a href="about.html">About</a>
+      <a href="submit.html">Submit a Scholarship</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title">Submit a <em>Scholarship</em></h1>
+      <p class="page-sub">Know a scholarship that's not listed? Help another Nigerian student discover it.</p>
+    </div>
+  </section>
+
+  <section class="submit-section">
+    <div class="container submit-container">
+      <div class="form-card" id="formCard">
+        <h2 class="form-title">Scholarship Details</h2>
+        <p class="form-note">Fill in what you know. We'll verify and add it to the list.</p>
+
+        <div class="form-group">
+          <label class="form-label">Scholarship Name *</label>
+          <input type="text" id="f-name" class="form-input" placeholder="e.g. MTN Foundation Scholarship" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Awarding Organization *</label>
+          <input type="text" id="f-org" class="form-input" placeholder="e.g. MTN Nigeria Foundation" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Country</label>
+            <select id="f-country" class="form-input">
+              <option value="">Select country</option>
+              <option>Nigeria</option>
+              <option>USA</option>
+              <option>UK</option>
+              <option>Canada</option>
+              <option>Germany</option>
+              <option>Global</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Level</label>
+            <select id="f-level" class="form-input">
+              <option value="">Select level</option>
+              <option value="undergraduate">Undergraduate</option>
+              <option value="postgraduate">Postgraduate</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Field of Study</label>
+            <select id="f-field" class="form-input">
+              <option value="">Select field</option>
+              <option>STEM</option>
+              <option>Medicine</option>
+              <option>Business</option>
+              <option>Law</option>
+              <option>Arts</option>
+              <option>Any</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Funding Type</label>
+            <select id="f-funding" class="form-input">
+              <option value="">Select type</option>
+              <option value="Full">Full Scholarship</option>
+              <option value="Partial">Partial Scholarship</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Amount / Award</label>
+            <input type="text" id="f-amount" class="form-input" placeholder="e.g. Full tuition + $1,500/month" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Application Deadline</label>
+            <input type="text" id="f-deadline" class="form-input" placeholder="e.g. Nov 1, 2026" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Application Link *</label>
+          <input type="url" id="f-link" class="form-input" placeholder="https://..." />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Brief Description</label>
+          <textarea id="f-desc" class="form-input form-textarea" placeholder="What is this scholarship about? Who qualifies?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Your Email (optional)</label>
+          <input type="email" id="f-email" class="form-input" placeholder="So we can credit you when it's listed" />
+        </div>
+
+        <button class="submit-btn" onclick="handleSubmit()">Submit Scholarship →</button>
+      </div>
+
+      <div class="success-card" id="successCard" style="display:none;">
+        <div class="success-icon">✅</div>
+        <h2>Thank you!</h2>
+        <p>Your scholarship submission has been received. We'll review and add it to the list soon.</p>
+        <p>You're helping another Nigerian student find their future. 🇳🇬</p>
+        <a href="index.html" class="submit-btn" style="display:inline-block;text-decoration:none;margin-top:1rem;">Browse Scholarships →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Naija<span class="green">Scholar</span></div>
+        <p class="footer-text">Built by a Nigerian student, for Nigerian students. 🇳🇬</p>
+        <p class="footer-copy">&copy; 2026 NaijaScholar. Free to use, always.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('f-name').value.trim();
+      const org = document.getElementById('f-org').value.trim();
+      const link = document.getElementById('f-link').value.trim();
+      if (!name || !org || !link) {
+        alert('Please fill in the required fields: Scholarship Name, Organization, and Link.');
+        return;
+      }
+      document.getElementById('formCard').style.display = 'none';
+      document.getElementById('successCard').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

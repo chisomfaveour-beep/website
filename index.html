@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NaijaScholar — Scholarships for Nigerian Students</title>
+  <meta name="description" content="Find scholarships available to Nigerian students — local and international. Free, updated, and built by a Nigerian student." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-icon">🎓</div>
+        <span class="logo-text">Naija<span class="green">Scholar</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Scholarships</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="submit.html" class="nav-link nav-cta">Submit a Scholarship</a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Scholarships</a>
+      <a href="about.html">About</a>
+      <a href="submit.html">Submit a Scholarship</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🇳🇬 Built for Nigerian Students</div>
+      <h1 class="hero-title">Find Your <em>Scholarship</em><br />Change Your Future</h1>
+      <p class="hero-sub">Hundreds of scholarships — local and international — curated for Nigerian students. Updated regularly. Completely free.</p>
+      <div class="search-wrap">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by name, university, or field..." />
+        <button class="search-btn" onclick="filterScholarships()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num" id="totalCount">12</div>
+          <div class="stat-label">Scholarships Listed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="fullCount">8</div>
+          <div class="stat-label">Fully Funded</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="urgentCount">3</div>
+          <div class="stat-label">Closing Soon</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">Free</div>
+          <div class="stat-label">Always Free to Use</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab active" onclick="setTab('all', this)">All</button>
+        <button class="tab" onclick="setTab('undergraduate', this)">Undergraduate</button>
+        <button class="tab" onclick="setTab('postgraduate', this)">Postgraduate</button>
+        <button class="tab" onclick="setTab('local', this)">Nigeria Only</button>
+      </div>
+      <div class="filters">
+        <select class="filter-select" id="fieldFilter" onchange="filterScholarships()">
+          <option value="">All Fields</option>
+          <option value="STEM">STEM</option>
+          <option value="Medicine">Medicine</option>
+          <option value="Business">Business</option>
+          <option value="Law">Law</option>
+          <option value="Arts">Arts & Humanities</option>
+          <option value="Any">Any Field</option>
+        </select>
+        <select class="filter-select" id="countryFilter" onchange="filterScholarships()">
+          <option value="">All Countries</option>
+          <option value="Nigeria">Nigeria</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Canada">Canada</option>
+          <option value="Global">Global</option>
+        </select>
+        <select class="filter-select" id="fundingFilter" onchange="filterScholarships()">
+          <option value="">All Funding</option>
+          <option value="Full">Full Scholarship</option>
+          <option value="Partial">Partial Scholarship</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results-section">
+    <div class="container">
+      <p class="results-count" id="resultsCount">Showing 12 scholarships</p>
+      <div class="card-grid" id="cardList"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Naija<span class="green">Scholar</span></div>
+        <p class="footer-text">Built by a Nigerian student, for Nigerian students. 🇳🇬<br/>Help us grow — <a href="submit.html" class="footer-link">submit a scholarship</a> you know about.</p>
+        <p class="footer-copy">&copy; 2026 NaijaScholar. Free to use, always.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
